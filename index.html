@@ -57,7 +57,11 @@
     </div>
 
     <script>
-       function findJob() {
+ let jobShown = false; // ফ্ল্যাগ, শুরুতে false
+
+function findJob() {
+    if (jobShown) return; // যদি আগে দেখানো হয়, সরাসরি return
+
     let name = document.getElementById('name').value.trim();
     let age = document.getElementById('age').value.trim();
 
@@ -87,7 +91,10 @@
 
     document.getElementById('result').innerHTML = 
         `${name}, তোমার ভবিষ্যতের পেশা হবে "${randomJob}" 😄`;
+
+    jobShown = true; // একবার দেখানো হয়ে গেলে true করে দিলাম
 }
+
 
     </script>
 
