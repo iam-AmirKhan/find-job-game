@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>তোমার ভবিষ্যতের পেশা</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #a8edea, #fed6e3);
+            text-align: center;
+            padding: 20px;
+        }
+        .game-box {
+            background: white;
+            padding: 20px;
+            max-width: 350px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+        }
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #e65c50;
+        }
+        .result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-box">
+        <h2>তোমার ভবিষ্যতের পেশা কী? 👔</h2>
+        <input type="text" id="name" placeholder="তোমার নাম লিখো">
+        <input type="number" id="age" placeholder="তোমার বয়স লিখো">
+        <br><br>
+        <button onclick="findJob()">জেনে নাও</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+       function findJob() {
+    let name = document.getElementById('name').value.trim();
+    let age = document.getElementById('age').value.trim();
+
+    if(name === "" || age === "") {
+        document.getElementById('result').innerHTML = "দয়া করে সব ঘর পূরণ করো!";
+        return;
+    }
+
+    let jobs = [
+        "বাতাস বিক্রেতা",
+        "চাঁদের আলো সংগ্রাহক",
+        "মশার ট্রেইনার",
+        "বিরিয়ানি টেস্টার",
+        "ঘুমের কোচ",
+        "পেঁয়াজ খোসা শিল্পী",
+        "চা-কাপ ডিজাইনার",
+        "হাসির সাউন্ড ইঞ্জিনিয়ার",
+        "পায়রা রেসার",
+        "জুতার ফিতা সাপোর্টার",
+        "তরমুজ রঙ পরীক্ষক",
+        "টক দই ইনফ্লুয়েন্সার",
+        "বালিশ রিভিউয়ার",
+        "ছাতা ওপেনার স্পেশালিস্ট"
+    ];
+
+    let randomJob = jobs[Math.floor(Math.random() * jobs.length)];
+
+    document.getElementById('result').innerHTML = 
+        `${name}, তোমার ভবিষ্যতের পেশা হবে "${randomJob}" 😄`;
+}
+
+    </script>
+
+</body>
+</html>
